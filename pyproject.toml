@@ -1,0 +1,66 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fig2fig-vector4paper"
+version = "0.1.0"
+description = "Convert and export research figures into publication-ready vector and raster formats"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Djalil", email = "djaliloh@github.com"}
+]
+keywords = ["matplotlib", "figures", "publication", "vector", "pdf", "svg"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Visualization",
+]
+requires-python = ">=3.10"
+
+dependencies = [
+    "matplotlib>=3.8.0",
+    "numpy>=1.24.0",
+]
+
+[project.optional-dependencies]
+vectorize = [
+    "vtracer>=0.1.8",
+]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.5.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/djaliloh/fig2fig-vector4paper"
+Repository = "https://github.com/djaliloh/fig2fig-vector4paper"
+Issues = "https://github.com/djaliloh/fig2fig-vector4paper/issues"
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+select = ["E", "F", "W"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+
+[tool.hatch.build.targets.wheel]
+packages = ["fig2fig"]
