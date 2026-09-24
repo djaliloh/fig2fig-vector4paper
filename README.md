@@ -58,12 +58,12 @@ pip install -e .
 ## Dependencies
 
 **Core:**
-- `matplotlib` (≥3.8.0) — Figure creation and styling
-- `numpy` (≥1.24.0) — Numerical operations
+- `matplotlib` (≥3.8.0) : Figure creation and styling
+- `numpy` (≥1.24.0) : Numerical operations
 
 **Optional:**
-- `vtracer` (≥0.1.8) — Raster-to-vector image conversion
-- `pytest`, `black`, `ruff`, `mypy` — Development tools
+- `vtracer` (≥0.1.8) : Raster-to-vector image conversion
+- `pytest`, `black`, `ruff`, `mypy` : Development tools
 
 ## Quick Start 
 
@@ -140,13 +140,13 @@ pytest tests/ --cov=fig2fig --cov-report=html
 ```
 
 **Test Coverage:**
-- ✅ FigureExporter initialization and configuration
-- ✅ Figure creation with presets and custom sizes
-- ✅ Multi-format export (PDF, SVG, PNG, JPEG)
-- ✅ Image vectorization with vtracer
-- ✅ Error handling and edge cases
+- FigureExporter initialization and configuration
+- Figure creation with presets and custom sizes
+- Multi-format export (PDF, SVG, PNG, JPEG)
+- Image vectorization with vtracer
+- Error handling and edge cases
 
----
+<!-- ---
 
 ## Code Quality
 
@@ -161,7 +161,7 @@ ruff check fig2fig/ examples/ tests/
 
 # Type checking with mypy
 mypy fig2fig/
-```
+``` -->
 
 ---
 
@@ -176,3 +176,21 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 3. Make changes and ensure tests pass: `pytest tests/`
 4. Format code: `black fig2fig/ tests/`
 5. Submit a pull request
+
+<!-- 
+For Tomorrow:
+
+We'll tackle the image quality issues with vtracer:
+- Test optimized parameters (reduce filter_speckle, increase precision)
+- Explore upscaling before vectorization
+- Find the best settings for scientific figures with text
+
+Things ready:
+- Package structure ✓
+- Tests ✓
+- Documentation ✓
+- Ready to commit/push to GitHub
+
+Things to improve:
+- Vectorization quality for complex figures
+- Find optimal vtracer parameters -->
